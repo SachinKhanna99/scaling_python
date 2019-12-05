@@ -1,0 +1,22 @@
+import turtle
+turtle.Turtle()
+
+def rect(a,b):
+    turtle.forward(a)
+    turtle.left(90)
+    turtle.forward(b)
+    turtle.left(90)
+
+def scaling(x,y,sx,sy):
+    rect(x,y)
+    x1=[[x,y]]
+    y1=[[sx,0],[0,sy]]
+    result=[[0,0]]
+
+    for i in range(len(x1)):
+        for j in range(len(y1[0])):
+            for k in range(len(y1)):
+                           result[i][j]+=x1[i][k]+y1[k][j]
+
+
+scaling(100,50,3,3)
